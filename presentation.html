@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Django Framework</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///home/abelthf/.virtualenvs/landslide/local/lib/python2.7/site-packages/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///home/abelthf/.virtualenvs/landslide/local/lib/python2.7/site-packages/landslide/themes/default/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///home/abelthf/.virtualenvs/landslide/local/lib/python2.7/site-packages/landslide/themes/default/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Django Framework</h1></header>
+            
+            
+            <section><p><img  src="file:///home/abelthf/proyectos/1.5.1/open-source-101-master/images/python-django.png" alt="We can do more when we work together.." /></p>
+<h2>Framework para perfeccionistas con límites de tiempo</h2>
+<div class="signature">
+Fredy Abel Huanca Torres<br />
+Universidad Peruana Unión<br />
+@bellbian • abel.huanca@upeu.pe<br />
+http://abelthf.upeu.pe/<br />
+<br />
+04 de Junio de 2013
+</div></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>¿Quien soy?</h1></header>
+            
+            
+            <section><h2>Ing. de Sistemas</h2>
+<h2>Durante el día: Profesor de redes, sistemas operativos, algoritmos y Estructura de datos en java :(</h2>
+<h2>Por la noche: un prometedor ninja python :)</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Temario</h1></header>
+            
+            
+            <section><h2>1. Introducción al lenguaje Python</h2>
+<h2>2. Introducción al Framework Django</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>1. Introducción a Python</h1></header>
+            
+            
+            <section><h2>- Interpretado</h2>
+<h2>- Facil de aprender</h2>
+<h2>- Identado</h2>
+<h2>- Multiparadigma</h2>
+<h2>- No marcadores de bloque, tienes que identar</h2>
+<h2>- Código legible antes que rápido</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Python es mas productivo (que java)</h1></header>
+            
+            
+            <section><h2>- Tipado dinámico</h2>
+<h2>- Shell interactiva</h2>
+<h2>- Código más limpio: menos “verboso” y escribes menos</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Python vs Java</h1></header>
+            
+            
+            <section><h2>Java</h2>
+<h2>public class HolaMundo</h2>
+<h2>{</h2>
+<h2>public static void main (String[ ] args)</h2>
+<h2>{</h2>
+<h2>System.out.println("Hola mundo");</h2>
+<h2>}</h2>
+<h2>}</h2>
+<h1>Python</h1>
+<p>!python
+print “Hola mundo”</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Introducción Django</h1></header>
+            
+            
+            <section><h2>- ¿Que es Django?</h2>
+<h2>- Características</h2>
+<h2>- Mi primer proyecto Django</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>QUE ES DJANGO</h1></header>
+            
+            
+            <section><h2>* Django es un framework web en Python de alto nivel que permite un desarrollo rápido y un diseño limpio y pragmático.</h2>
+<h2>* Su objetivo principal es facilitar la creación de webs complejas apoyadas en bases de datos.</h2>
+<h2>* Inicialmente desarrollado en un entorno de noticias en línea (“The World Company”)</h2>
+<h2>* Diseñada para que el desarrollador se concentre en la lógica de negocio y olvide detalles rutinarios</h2>
+<h2>* Django automatiza todo lo posible adhiriéndose al principio DRY (Don’t Repeat Yourself)</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>¿Y EL NOMBRE?</h1></header>
+            
+            
+            <section><h2>Jean “Django” Reinhardt (famoso guitarrista de Jazz belga romaní)</h2>
+<h2>http://www.youtube.com/watch?v=AEzsPGHsi90</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Caracterísiticas Django</h1></header>
+            
+            
+            <section><h2>- Echo en python</h2>
+<h2>- Desarrollo muy rápido</h2>
+<h2>- Busca el perfeccionismo</h2>
+<h2>- Patron MTV</h2>
+<h2>- Incluye una interfaz administrativa CRUD  generada dinámicamente a partir del modelo de datos</h2>
+<h2>- Incluye un servidor de desarrollo</h2>
+<h2>- Soportado por Google App Engine</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Diseño Perefecionista</h1></header>
+            
+            
+            <section><h2>- Código muy legible</h2>
+<h2>- Exquisita metodología de desarrollo</h2>
+<h2>- Perfecta documentación</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>COMPONENTES FUNDAMENTALES</h1></header>
+            
+            
+            <section><h2>* Mapeador objeto-relacional (ORM) (Model)</h2>
+<h2>* Gestor de peticiones web (VIEW:URLs)</h2>
+<h2>* Sistema de Vistas (/VIEW)</h2>
+<h2>* Sistema de Plantillas (Template)</h2>
+<p><img  src="file:///home/abelthf/proyectos/1.5.1/open-source-101-master/images/engranaje.png" alt="Esquema MTV de Django" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>¿COMO TRABAJA?</h1></header>
+            
+            
+            <section><h2>1. La aplicación recibe una petición por medio de URLconf,</h2>
+<h2>2. URLconf envia a la vista dicha petición.</h2>
+<h2>3. La vista tiene dos posibilidades,</h2>
+<h2>- enviar a la Plantilla entregue algo al cliente</h2>
+<h2>- solicitar información del Modelo, renderizar con la plantilla y finalmente se le entrega al cliente.</h2>
+<h2>4. el modelo interactua con la base de datos por medio de ORM</h2>
+<p><img  src="file:///home/abelthf/proyectos/1.5.1/open-source-101-master/images/esquema-mtv-urlconf.png" alt="Esquema MTV de Django" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>OTROS COMPONENTES</h1></header>
+            
+            
+            <section><h2>Servidor web ligero para desarrollo y pruebas de aplicaciones</h2>
+<h2>Interfaz de administración automática</h2>
+<h2>Sistema de fomularios</h2>
+<h2>Sistema de autenticación / autorizacion</h2>
+<h2>Internacionalización</h2>
+<h2>Sistema caché</h2>
+<h2>Framework de sindicación</h2>
+<h2>Framework testing unitario y funcional</h2>
+<h2>...</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Recursos básicos</h1></header>
+            
+            
+            <section><h2>Documentación Oficial: http://docs.djangoproject.com/</h2>
+<h2>Wiki, SVN, Tickets, etc.</h2>
+<h2>http://code.djangoprojects.com/</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>DISEÑO DE URLs</h1></header>
+            
+            
+            <section><h2>* No se requieren URLs horribles</h2>
+<h2>foo.es/bar/s_view/infrastructure/0,2545,TCP167364285088,00.html</h2>
+<h2>foo.es/noticias.php?anyo=2006</h2>
+<h2>Independencia entre URLs y lógica de aplicación</h2>
+<p><br></br></p>
+<h1>Se quiere arquitectura REST</h1>
+<h2>foo.es/noticias/2008/</h2>
+<h2>foo.es/noticias/crear/</h2>
+<h2>foo.es/noticias/conf-oswc/borrar/</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>VISTAS</h1></header>
+            
+            
+            <section><h2>* Realizan la lógica de la aplicación</h2>
+<h2>* Suele renderizar una plantilla</h2>
+<h2>Ejemplo:</h2>
+<h2>from news.models import Noticia</h2>
+<h2>def lista_anual(request, anio):</h2>
+<h2>noticias = Noticia.objects.filter(anyo=anyo)</h2>
+<h2>return render_to_response('noticias.html',  {'noticias': noticias})</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>PLANTILLAS</h1></header>
+            
+            
+            <section><h2>- No incluir lógica en las plantillas</h2>
+<h2>- No usar XML</h2>
+<h2>- Facilita la sintaxis para el diseñador</h2>
+<h2>- Lenguaje propio</h2>
+<h2>- muy legible</h2>
+<h2>- Soporta herencia de plantillas</h2>
+<h2>-- Extensible</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>PLANTILLAS:</h1></header>
+            
+            
+            <section><h2>ejemplo:</h2>
+<h2>{% extends "base.html" %}</h2>
+<h2>{% block contenido %}</h2>
+<h2><ul></h2>
+<h2>{% for n in noticias %}</h2>
+<h2><li></h2>
+<h2><a href="/noticias/{{ n.id }}/"></h2>
+<h2>{{ n.titulo|upper }}</h2>
+<h2></a></h2>
+<h2></li></h2>
+<h2>{% endfor %}</h2>
+<h2></ul></h2>
+<h2>{% endblock %}</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Demo</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: open-source-101.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>No olvidar, fácil !=  sensillo</h1></header>
+            
+            
+            <section><h2>Ha estudiar Django + Python</h2>
+<p>--</p>
+<h1>Gracias por la atención</h1></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="open-source-101.md">open-source-101.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source:  -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="page_number">
+              /21
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Django Framework</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">¿Quien soy?</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Temario</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">1. Introducción a Python</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Python es mas productivo (que java)</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Python vs Java</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Introducción Django</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">QUE ES DJANGO</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">¿Y EL NOMBRE?</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Caracterísiticas Django</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Diseño Perefecionista</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">COMPONENTES FUNDAMENTALES</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">¿COMO TRABAJA?</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">OTROS COMPONENTES</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Recursos básicos</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">DISEÑO DE URLs</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">VISTAS</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">PLANTILLAS</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">PLANTILLAS:</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Demo</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">No olvidar, fácil !=  sensillo</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
